@@ -63,3 +63,7 @@
 .panel-signin > .panel-footer > ul a:hover, .panel-signin > .panel-footer > ul a:focus {
 	background-color: #505050;
 }
+.panel-title .text {
+	font-size: 42px;
+	color: #999999;
+}
