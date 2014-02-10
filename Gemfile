@@ -34,6 +34,7 @@ end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
+# gem 'bcrypt-ruby', '~> 3.1.2', :require => "bcrypt"
 
 # Use unicorn as the app server
 # gem 'unicorn'
@@ -43,3 +44,26 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'bootstrap-sass'
+gem "font-awesome-rails"
+
+group :test, :development do
+  gem "rspec-rails"
+end
+
+group :development do
+  # Rails Form Creation
+  # rails generate simple_form:install --bootstrap
+  # rails generate simple_form:install --foundation
+  gem 'simple_form', '~> 3.0.0.rc'
+  gem 'better_errors'
+  gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
+  gem 'quiet_assets'
+end
+
+group :test do
+  gem "factory_girl_rails"
+  gem "capybara"
+  gem "guard-rspec"
+end
