@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  before_action :authorize, only: [:new, :create]
   layout 'noheaderfooter', only: [:new, :create]
   
   def new
@@ -14,7 +13,7 @@ class UsersController < ApplicationController
       render "new"
     end
   end
-  
+
   
   private
     def signup_user_params

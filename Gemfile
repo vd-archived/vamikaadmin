@@ -50,7 +50,7 @@ gem 'bootstrap-sass'
 gem "font-awesome-rails"
 
 group :test, :development do
-  gem "rspec-rails"
+  gem 'rspec-rails', '~> 3.0.0.beta1' 
 end
 
 group :development do
