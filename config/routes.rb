@@ -1,6 +1,16 @@
 Vamikaadmin::Application.routes.draw do
-  root 'users#new'
+
+  resources :posts
+
+  get 'signup' , to: 'users#new',        as: 'signup'
+  get 'signin' , to: 'sessions#new',     as: 'signin'
+  get 'signout', to: 'sessions#destroy', as: 'signout'
+  
   resources :users
+  resources :sessions
+  resources :password_resets
+
+  root 'users#new'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

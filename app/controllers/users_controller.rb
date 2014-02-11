@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  layout 'noheaderfooter', only: [:new]
+  before_action :authorize, only: [:new, :create]
+  layout 'noheaderfooter', only: [:new, :create]
   
   def new
     @user = User.new
@@ -8,7 +9,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(signup_user_params)
     if @user.save
-      redirect_to root_url, notice: "Thanks you for signing up!"
+      redirect_to root_url, success: "Thanks you for signing up!"
     else
       render "new"
     end
